@@ -13,7 +13,7 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <icefaces.version>3.3.0</icefaces.version>
-        <jsf.version>2.2.1</jsf.version>
+        <jsf.version>2.1.24</jsf.version>
     </properties>
 
     <dependencies>
@@ -34,7 +34,8 @@
             <artifactId>jsf-impl</artifactId>
             <version>${jsf.version}</version>
         </dependency>
-
+        <!--
+        -->
         <dependency>
             <groupId>org.icepush</groupId>
             <artifactId>icepush</artifactId>
