@@ -19,39 +19,61 @@
         <h:form>
             <div class="titulo-form">FICHA DE INSCRIÇÃO</div>
             <h:panelGroup style="text-align: left; margin-bottom: 10px;" layout="block">
+                
+                
+                
                 <h:panelGroup styleClass="form-block" layout="block">
                     <h:outputLabel for="idioma" value="Idioma"/>
                     <h:selectOneMenu id="idioma" value="#{inscricaoBean.candidato.idioma.codigo}" style="width:12em">
                         <f:selectItems value="#{inscricaoBean.idiomaItemList}"/>
                     </h:selectOneMenu>
                 </h:panelGroup>
+                
+                    <h:panelGroup styleClass="form-block" layout="block">
+                    <ast class="requerido">
+                        <h:outputLabel for="cpf" value="CPF"/>
+                        <h:inputText id="cpf" value="#{inscricaoBean.candidato.cpf}" label="CPF" size="15" required="true"/>
+                    </ast>
+                    <ast class="requerido">
+                        <h:outputLabel for="rg" value="RG"/>
+                        <h:inputText id="rg" value="#{inscricaoBean.candidato.rg}" size="25" label="RG" maxlength="20" required="true"/>
+                    </ast>
+                    </h:panelGroup>
+   
+                    <h:panelGroup styleClass="form-block" layout="block">
+                    <ast class="requerido">
+                        <h:outputLabel for="nome" value="Nome"/>
+                        <h:inputText id="nome" value="#{inscricaoBean.candidato.nome}" size="50"
+                             label="Nome" maxlength="100" required="true"/>
+                    </ast>
+                    </h:panelGroup>
+                       
                 <h:panelGroup styleClass="form-block" layout="block">
-                    <h:outputLabel for="cpf" value="CPF"/>
-                    <h:inputText id="cpf" value="#{inscricaoBean.candidato.cpf}" label="CPF" size="15" required="true"/>
-                    <h:outputLabel for="rg" value="RG"/>
-                    <h:inputText id="rg" value="#{inscricaoBean.candidato.rg}" size="25" label="RG" maxlength="20" required="true"/>
-                </h:panelGroup>
-                <h:panelGroup styleClass="form-block" layout="block">
-                    <h:outputLabel for="nome" value="Nome"/>
-                    <h:inputText id="nome" value="#{inscricaoBean.candidato.nome}" size="50"
-                         label="Nome" maxlength="100" required="true"/>
-                </h:panelGroup>
-                <h:panelGroup styleClass="form-block" layout="block">
+                <ast class="requerido">
                     <h:outputLabel for="endereco" value="Endereço"/>
                     <h:inputText id="endereco" value="#{inscricaoBean.candidato.endereco}" size="50"
                           styleClass="ui-inputfield" label="Endereço" maxlength="80" required="true"/>
+                </ast>
                 </h:panelGroup>
+                
                 <h:panelGroup styleClass="form-block" layout="block">
+                <ast class="requerido">    
                     <h:outputLabel for="cidade" value="Cidade"/>
                     <h:inputText id="cidade" value="#{inscricaoBean.candidato.cidade}" size="50"
                             styleClass="ui-inputfield" label="cidade" maxlength="50" required="true"/>
+                </ast>    
+                <ast class="requerido">    
                     <h:outputLabel for="estado" value="Estado"/>
                     <h:inputText id="estado" value="#{inscricaoBean.candidato.estado}" size="4"
                             styleClass="ui-inputfield" label="Estado" maxlength="2" required="true"/>
+                </ast>
                 </h:panelGroup>
                 <h:panelGroup styleClass="form-block" layout="block">
+                <ast class="requerido">
                     <h:outputLabel for="cep" value="CEP"/>
                     <h:inputText id="cep" value="#{inscricaoBean.candidato.cep}" label="CEP" size="10" required="true"/>
+                </ast>
+                
                     <h:outputLabel for="bairro" value="Bairro"/>
                     <h:inputText id="bairro" value="#{inscricaoBean.candidato.bairro}" size="30" label="Bairro" maxlength="50"/>
                 </h:panelGroup>
@@ -62,19 +84,25 @@
                     <h:inputText id="celular" value="#{inscricaoBean.candidato.celular}" label="Celular" size="15"/>
                 </h:panelGroup>
                 <h:panelGroup styleClass="form-block" layout="block">
+                <ast class="requerido">
                     <h:outputLabel for="email" value="E-mail"/>
                     <h:inputText id="email" value="#{inscricaoBean.candidato.email}" size="80"
                           label="E-mail" maxlength="200" required="true"/>
+                </ast>
                 </h:panelGroup>
                 <h:panelGroup styleClass="form-block" layout="block">
+                <ast class="requerido">
                     <h:outputLabel for="instituicao" value="Instituição"/>
                     <h:inputText id="instituicao" value="#{inscricaoBean.candidato.instituicao}" size="80"
                           styleClass="ui-inputfield" label="Instituição" maxlength="100" required="true"/>
+                </ast>
                 </h:panelGroup>
                 <h:panelGroup styleClass="form-block" layout="block">
+                <ast class="requerido">
                     <h:outputLabel for="programa" value="Programa"/>
                     <h:inputText id="programa" value="#{inscricaoBean.candidato.programa}" size="80"
                           styleClass="ui-inputfield" label="Programa" maxlength="100" required="true"/>
+                </ast>
                 </h:panelGroup>
             </h:panelGroup>
             <h:commandButton value="Confirmar Inscrição" action="#{inscricaoBean.confirmaAction}"/>
