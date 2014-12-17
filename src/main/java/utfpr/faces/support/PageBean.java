@@ -15,6 +15,7 @@ public class PageBean extends FacesBean {
 
     /**
      * Retorna um managed bean dado o seu nome
+     * @param name
      * @return O bean de aplicação
      */
     public Object getBean(String name) {

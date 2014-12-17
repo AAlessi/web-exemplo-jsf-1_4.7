@@ -17,6 +17,10 @@ import utfpr.faces.support.PageBean;
 @ManagedBean
 @RequestScoped
 public class InscricaoBean extends PageBean {
+    
+    
+  
+    
     private static final Idioma[] idiomas = {
         new Idioma(1, "Inglês"),
         new Idioma(2, "Alemão"),
@@ -24,6 +28,17 @@ public class InscricaoBean extends PageBean {
     };
     private Candidato candidato = new Candidato(idiomas[0]); // inicialmente ingles
     private List<SelectItem> idiomaItemList;
+    
+    
+    private String deuCerto ="";
+
+    public String getDeuCerto() {
+        return deuCerto;
+    }
+
+    public void setDeuCerto(String deuCerto) {
+        this.deuCerto = deuCerto;
+    }
 
     public Candidato getCandidato() {
         return candidato;
@@ -43,8 +58,15 @@ public class InscricaoBean extends PageBean {
     }
 
     public String confirmaAction() {
+        
+
         candidato.setDataHora(new Date());
         candidato.setIdioma(idiomas[candidato.getIdioma().getCodigo()-1]);
+        AppBean appBean = (AppBean) getBean("appBean");
+        
+        appBean.setNovoCandidato(candidato);
+        
+        
         return "confirma";
     }
 }
