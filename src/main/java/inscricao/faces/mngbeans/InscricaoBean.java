@@ -6,19 +6,22 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.faces.model.SelectItem;
+import javax.inject.Inject;
+import javax.inject.Named;
 import utfpr.faces.support.PageBean;
 
 /**
  *
  * @author Wilson
  */
-@ManagedBean
+@Named
 @RequestScoped
 public class InscricaoBean extends PageBean {
     
-    
+    @Inject
+    AppBean appBean ;
   
     
     private static final Idioma[] idiomas = {
@@ -29,16 +32,7 @@ public class InscricaoBean extends PageBean {
     private Candidato candidato = new Candidato(idiomas[0]); // inicialmente ingles
     private List<SelectItem> idiomaItemList;
     
-    
-    private String deuCerto ="";
-
-    public String getDeuCerto() {
-        return deuCerto;
-    }
-
-    public void setDeuCerto(String deuCerto) {
-        this.deuCerto = deuCerto;
-    }
+   
 
     public Candidato getCandidato() {
         return candidato;
@@ -62,7 +56,7 @@ public class InscricaoBean extends PageBean {
 
         candidato.setDataHora(new Date());
         candidato.setIdioma(idiomas[candidato.getIdioma().getCodigo()-1]);
-        AppBean appBean = (AppBean) getBean("appBean");
+        
         
         appBean.setNovoCandidato(candidato);
         
