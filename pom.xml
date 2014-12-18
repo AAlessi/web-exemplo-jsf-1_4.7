@@ -34,27 +34,25 @@
             <artifactId>jsf-impl</artifactId>
             <version>${jsf.version}</version>
         </dependency>
-        <!--
-        -->
-        <dependency>
-            <groupId>org.icepush</groupId>
-            <artifactId>icepush</artifactId>
-            <version>${icefaces.version}</version>
-        </dependency>
         <dependency>
             <groupId>org.icefaces</groupId>
-            <artifactId>icefaces-compat</artifactId>
-            <version>${icefaces.version}</version>
+            <artifactId>icefaces</artifactId>
+            <version>3.3.0</version>
         </dependency>
         <dependency>
             <groupId>org.icefaces</groupId>
             <artifactId>icefaces-ace</artifactId>
-            <version>${icefaces.version}</version>
+            <version>3.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.icepush</groupId>
+            <artifactId>icepush</artifactId>
+            <version>3.3.0</version>
         </dependency>
         <dependency>
             <groupId>org.icefaces</groupId>
-            <artifactId>icefaces</artifactId>
-            <version>${icefaces.version}</version>
+            <artifactId>icefaces-compat</artifactId>
+            <version>3.3.0</version>
         </dependency>
 
         <dependency>

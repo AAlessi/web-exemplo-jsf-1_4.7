@@ -3,7 +3,10 @@
 <ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:h="http://java.sun.com/jsf/html"
-                template="./WEB-INF/templates/layout.xhtml">
+                xmlns:ice="http://www.icesoft.com/icefaces/component"
+                xmlns:ace="http://www.icefaces.org/icefaces/components"
+                template="./WEB-INF/templates/layout.xhtml"
+                >
 
     <ui:define name="styles">
         <link href="./css/inscricao.css" rel="stylesheet" type="text/css" />
@@ -19,35 +22,22 @@
         <h:form>
             <div class="titulo-form">Lista</div>
 
-            <h:dataTable id="items"
+            <ace:dataTable  id="items"
                          value="#{appBean.listaCadidatos}"
                          var="item">
-                <h:column >
-                    <f:facet name="header">
-                        <h:outputText value="CPF" />
-                    </f:facet>
-                    
+                <ace:column id="cpf" headerText="CPF" >                  
                     <h:outputText value="#{item.cpf}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Nome"/>
-                    </f:facet>
+                </ace:column>
+                <ace:column id="nome" headerText="Nome" >   
                     <h:outputText value="#{item.nome}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Cidade"/>
-                    </f:facet>
+                </ace:column>
+                <ace:column id="cidade" headerText="Cidade" >   
                     <h:outputText value="#{item.cidade}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputText value="Estado"/>
-                    </f:facet>
+                </ace:column>
+                <ace:column id="estado" headerText="Estado" >   
                     <h:outputText value="#{item.estado}"/>
-                </h:column>
-            </h:dataTable> 
+                </ace:column>
+            </ace:dataTable > 
 
         </h:form>
     </ui:define>

@@ -28,7 +28,7 @@ public class Candidato implements Serializable {
     private Integer cep;
     private String fone;
     private String celular;
-    @Pattern(regexp=".+@+." , message = "Email Inválido!")
+    @Pattern(regexp= ".+@+." , message = "Email Inválido!")
     private String email;
     private Idioma idioma;
     private Date dataHora;
