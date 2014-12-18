@@ -32,7 +32,9 @@
                 <h:panelGroup styleClass="form-block" layout="block">
                     <ast class="requerido">
                         <h:outputLabel for="cpf" value="CPF"/>
-                        <h:inputText id="cpf" value="#{inscricaoBean.candidato.cpf}" label="CPF" size="15" required="true"/>
+                        <h:inputText id="cpf" value="#{inscricaoBean.candidato.cpf}" label="CPF" size="15" required="true" >
+                            <f:validator validatorId="cpfValidator"/>
+                        </h:inputText>
                     </ast>
                     <ast class="requerido">
                         <h:outputLabel for="rg" value="RG"/>
@@ -106,7 +108,7 @@
                 </h:panelGroup>
             </h:panelGroup>
             <h:commandButton value="Confirmar Inscrição" action="#{inscricaoBean.confirmaAction}">
-                
+
             </h:commandButton>
             <h:messages/>
         </h:form>

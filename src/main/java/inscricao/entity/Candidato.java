@@ -2,18 +2,22 @@ package inscricao.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.inject.Named;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 /**
  *
  * @author Wilson
  */
+
+@Named
 public class Candidato implements Serializable {
     private static final long serialVersionUID = 1L;
     private Long cpf;
     private String rg;
+    @Size(min=3, max=50, message = "Nome deve ter entre 3 á 50 carac")
+    @Pattern(regexp="\\D\\S\\s\\S\\D" , message = "Nome Inválido!")
     private String nome;
     private String instituicao;
     private String programa;
@@ -24,6 +28,7 @@ public class Candidato implements Serializable {
     private Integer cep;
     private String fone;
     private String celular;
+    @Pattern(regexp=".+@+." , message = "Email Inválido!")
     private String email;
     private Idioma idioma;
     private Date dataHora;
